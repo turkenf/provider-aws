@@ -1,5 +1,5 @@
 name: Bug Report
-about: Help us diagnose and fix bugs in Official AWS Provider
+description: Help us diagnose and fix bugs in Official AWS Provider
 labels: bug,needs:triage
 title: "[Bug]: "
 body:
