@@ -2,7 +2,7 @@
 name: Bug Report
 about: Help us diagnose and fix bugs in Official AWS Provider
 labels: bug,needs:triage
-title: 
+title: "[Bug]: "
 ---
 <!--
 Thank you for helping to improve Official AWS Provider!
@@ -16,6 +16,15 @@ for bug reports and feature requests.
 Please let us know what behaviour you expected and how Official AWS Provider diverged from
 that behaviour.
 -->
+body:
+  - type: textarea
+    id: affected
+    attributes:
+      label: Affected Resource(s)
+      description: Please list the affected resource(s) and/or data source(s).
+      placeholder: "* aws_xxx"
+    validations:
+      required: false
 
 ### How can we reproduce it?
 <!--
