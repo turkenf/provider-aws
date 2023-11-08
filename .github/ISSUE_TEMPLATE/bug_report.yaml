@@ -1,7 +1,7 @@
 name: Bug Report
 about: Help us diagnose and fix bugs in Official AWS Provider
 labels: bug,needs:triage
-title: bug
+title: "[Bug]: "
 body:
   - type: markdown
     attributes:
@@ -97,10 +97,7 @@ body:
     id: references
     attributes:
       label: References
-      description: |
-        Where possible, please supply links to vendor documentation, other GitHub issues (open or closed) or pull requests that give additional context.
-
-        [Information about referencing Github Issues](https://help.github.com/articles/basic-writing-and-formatting-syntax/#referencing-issues-and-pull-requests)
+      description: Where possible, please supply links to vendor documentation, other GitHub issues (open or closed) or pull requests that give additional context.
     validations:
       required: false
 
