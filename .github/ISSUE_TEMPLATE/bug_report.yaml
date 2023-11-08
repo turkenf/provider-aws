@@ -1,7 +1,7 @@
 name: Bug Report
 about: Help us diagnose and fix bugs in Official AWS Provider
 labels: bug,needs:triage
-title:
+title: bug
 body:
   - type: markdown
     attributes:
