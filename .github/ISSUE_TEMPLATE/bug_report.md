@@ -1,7 +1,6 @@
 name: Bug Report
-about: Help us diagnose and fix bugs in Official AWS Provider
-labels: bug,needs:triage
-title: "[Bug]: "
+description: Report a bug encountered while operating Kubernetes
+labels: kind/bug
 body:
   - type: textarea
     id: problem
@@ -106,4 +105,3 @@ body:
         <details>
 
         </details>
-
