@@ -1,107 +1,117 @@
 name: Bug Report
-description: Report a bug encountered while operating Kubernetes
-labels: kind/bug
+about: Help us diagnose and fix bugs in Official AWS Provider
+labels: bug,needs:triage
+title:
 body:
-  - type: textarea
-    id: problem
+  - type: markdown
     attributes:
-      label: What happened?
-      description: |
-        Please provide as much info as possible. Not doing so may result in your bug not being addressed in a timely manner.
-        If this matter is security related, please disclose it privately via https://kubernetes.io/security
+      value: |
+        # Thank you for helping to improve Official AWS Provider!
+
+        Please be sure to search for open issues before raising a new one. We use issues for bug reports and feature requests.
+ 
+  - type: textarea
+    id: affected
+    attributes:
+      label: Affected Resource(s)
+      description: Please fill the affected resource(s) "kind.groupname"
+      placeholder: "* kind.APIgroup=> Bucket.s3"
     validations:
-      required: true
+      required: false
 
   - type: textarea
     id: expected
     attributes:
-      label: What did you expect to happen?
+      label: Expected Behavior
+      description: What behavior do you expect?
+    validations:
+      required: true
+
+  - type: textarea
+    id: actual
+    attributes:
+      label: Actual Behavior
+      description: What actually happened?
+    validations:
+      required: true
+
+  - type: textarea
+    id: log
+    attributes:
+      label: Relevant Error Output Snippet
+      description: |
+        If applicable, provide a relevant snippet from the error or panic output.
+      render: shell
+    validations:
+      required: false
+
+  - type: textarea
+    id: tf_config
+    attributes:
+      label: Resource MRs required to reproduce the bug
+      description: Please provide the example manifests and configurations you use.
     validations:
       required: true
 
   - type: textarea
     id: repro
     attributes:
-      label: How can we reproduce it (as minimally and precisely as possible)?
+      label: Steps to Reproduce
+      description: Please list the steps required to reproduce the issue.
     validations:
       required: true
 
-  - type: textarea
-    id: additional
+  - type: input
+    id: crossplane_version
     attributes:
-      label: Anything else we need to know?
-
-  - type: textarea
-    id: kubeVersion
-    attributes:
-      label: Kubernetes version
-      value: |
-        <details>
-
-        ```console
-        $ kubectl version
-        # paste output here
-        ```
-
-        </details>
+      label: Crossplane Version
+      placeholder: "X.Y.Z"
     validations:
       required: true
 
-  - type: textarea
-    id: cloudProvider
+  - type: input
+    id: provider_version
     attributes:
-      label: Cloud provider
-      value: |
-        <details>
-
-        </details>
+      label: Provider Version
+      placeholder: "X.Y.Z"
     validations:
       required: true
 
-  - type: textarea
-    id: osVersion
+  - type: input
+    id: kubernetes_version
     attributes:
-      label: OS version
-      value: |
-        <details>
+      label: Kubernetes Version
+      placeholder: "use `kubectl version`"
+    validations:
+      required: false
 
-        ```console
-        # On Linux:
-        $ cat /etc/os-release
-        # paste output here
-        $ uname -a
-        # paste output here
-
-        # On Windows:
-        C:\> wmic os get Caption, Version, BuildNumber, OSArchitecture
-        # paste output here
-        ```
-
-        </details>
+  - type: input
+    id: kubernetes_distribution
+    attributes:
+      label: Kubernetes Distribution
+      placeholder: "EKS, AKS, GKE, OpenShift, etc."
+    validations:
+      required: false
 
   - type: textarea
-    id: installer
+    id: references
     attributes:
-      label: Install tools
-      value: |
-        <details>
+      label: References
+      description: |
+        Where possible, please supply links to vendor documentation, other GitHub issues (open or closed) or pull requests that give additional context.
 
-        </details>
+        [Information about referencing Github Issues](https://help.github.com/articles/basic-writing-and-formatting-syntax/#referencing-issues-and-pull-requests)
+    validations:
+      required: false
 
-  - type: textarea
-    id: runtime
+  - type: dropdown
+    id: will_contribute
     attributes:
-      label: Container runtime (CRI) and version (if applicable)
-      value: |
-        <details>
-
-        </details>
-
-  - type: textarea
-    id: plugins
-    attributes:
-      label: Related plugins (CNI, CSI, ...) and versions (if applicable)
-      value: |
-        <details>
-
-        </details>
+      label: Would you like to implement a fix?
+      description: |
+        If you plan to implement a fix for this, check this box to let the maintainers and community know (you can update this later if you change your mind). If this would be your first contribution, refer to the [contribution guide](https://hashicorp.github.io/terraform-provider-aws/) for tips on getting started.
+      options:
+        - "No"
+        - "Yes"
+    validations:
+      required: false
