@@ -8,7 +8,17 @@ body:
       value: |
         # Thank you for helping to improve Official AWS Provider!
 
-        Please be sure to search for open issues before raising a new one. We use issues for bug reports and feature requests.
+        - If you're not currently using the most recent version of the Upbound provider-aws, we recommend upgrading. This could resolve your issue, as any potential issues may have already been addressed in the latest release.
+
+  - type: checkboxes
+    attributes:
+      label: Is there an existing issue for this?
+      description: |
+        Please be sure to search for open issues before raising a new one.
+        If there is an existing issue, please vote for it by adding a 👍 reaction to it to help us prioritize it.
+      options:
+        - label: I have searched the existing issues
+          required: true
  
   - type: textarea
     id: affected
