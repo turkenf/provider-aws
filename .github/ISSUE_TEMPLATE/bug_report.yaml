@@ -30,6 +30,22 @@ body:
       required: false
 
   - type: textarea
+    id: mr
+    attributes:
+      label: Resource MRs required to reproduce the bug
+      description: Please provide the example manifests and configurations you use.
+    validations:
+      required: true
+
+  - type: textarea
+    id: repro
+    attributes:
+      label: Steps to Reproduce
+      description: Please list the steps required to reproduce the issue.
+    validations:
+      required: true
+
+  - type: textarea
     id: expected
     attributes:
       label: Expected Behavior
@@ -54,22 +70,6 @@ body:
       render: shell
     validations:
       required: false
-
-  - type: textarea
-    id: tf_config
-    attributes:
-      label: Resource MRs required to reproduce the bug
-      description: Please provide the example manifests and configurations you use.
-    validations:
-      required: true
-
-  - type: textarea
-    id: repro
-    attributes:
-      label: Steps to Reproduce
-      description: Please list the steps required to reproduce the issue.
-    validations:
-      required: true
 
   - type: input
     id: crossplane_version
