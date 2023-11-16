@@ -104,21 +104,10 @@ body:
       required: false
 
   - type: textarea
-    id: references
+    id: additional_info
     attributes:
-      label: References
-      description: Where possible, please supply links to vendor documentation, other GitHub issues (open or closed) or pull requests that give additional context.
+      label: Additional Info
+      description: The additional information you want to add, such as issues, pull requests, reference documents, situations specific to your environment, etc.
     validations:
       required: false
 
-  - type: dropdown
-    id: will_contribute
-    attributes:
-      label: Would you like to implement a fix?
-      description: |
-        If you plan to implement a fix for this, check this box to let the maintainers and community know (you can update this later if you change your mind). If this would be your first contribution, refer to the [contribution guide](https://hashicorp.github.io/terraform-provider-aws/) for tips on getting started.
-      options:
-        - "No"
-        - "Yes"
-    validations:
-      required: false
