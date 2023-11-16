@@ -8,7 +8,7 @@ body:
       value: |
         # Thank you for helping to improve Official AWS Provider!
 
-        - If you're not currently using the most recent version of the Upbound provider-aws, we recommend upgrading. This could resolve your issue, as any potential issues may have already been addressed in the latest release.
+        - If you're not currently using the most recent version of the Upbound Official AWS Provider, we recommend upgrading. This could resolve your issue, as any potential issues may have already been addressed in the latest release.
 
   - type: checkboxes
     attributes:
@@ -107,7 +107,7 @@ body:
     id: additional_info
     attributes:
       label: Additional Info
-      description: The additional information you want to add, such as issues, pull requests, reference documents, situations specific to your environment, etc.
+      description: The additional information you want to add, related issue(s), pull requests, reference documents, situations specific to your environment, etc.
     validations:
       required: false
 
