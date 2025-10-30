@@ -57,6 +57,8 @@ var TerraformPluginFrameworkExternalNameConfigs = map[string]config.ExternalName
 	// us-west-2_abc123/3ho4ek12345678909nh3fmhpko
 	"aws_cognito_user_pool_client": cognitoUserPoolClient(),
 
+	"aws_dsql_cluster": dsqlCluster(),
+
 	// dynamodb
 	//
 	// DynamoDB table resource policy can be imported using the DynamoDB resource identifier
@@ -3346,6 +3348,32 @@ func s3LifecycleConfiguration() config.ExternalName {
 		idStr, ok := id.(string)
 		if !ok {
 			return "", errors.New("bucket field must be a string")
+		}
+		return idStr, nil
+	}
+	return e
+}
+
+func dsqlCluster() config.ExternalName {
+	e := config.IdentifierFromProvider
+	stub := "artix3b6dqiognkp7732wzhroi"
+	// Never propagate external-name into the "identifier" argument.
+	// Only ensure "identifier" is set when external-name is empty (to pass provider-side validation).
+	e.SetIdentifierArgumentFn = func(base map[string]interface{}, externalName string) {
+		if externalName == "" {
+			base["identifier"] = stub
+		} else {
+			base["identifier"] = externalName
+		}
+	}
+	e.GetExternalNameFn = func(tfstate map[string]any) (string, error) {
+		id, ok := tfstate["identifier"]
+		if !ok {
+			return "", errors.New("identifier field missing from tfstate")
+		}
+		idStr, ok := id.(string)
+		if !ok {
+			return "", errors.New("identifier field must be a string")
 		}
 		return idStr, nil
 	}
